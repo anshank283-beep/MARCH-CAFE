@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: march-cafe
+    env: static
+    buildCommand: npm run build
+    publishPath: frontend/dist
+    envVars:
+      - key: VITE_WHATSAPP_NUMBER
+        value: 91XXXXXXXXXX
