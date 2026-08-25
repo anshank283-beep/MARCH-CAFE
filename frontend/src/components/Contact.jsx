@@ -1,100 +1,67 @@
-import { MapPin, Clock, Phone, Navigation, MessageCircle } from 'lucide-react'
+import React from 'react'
+import { MapIcon, ClockIcon, PhoneIcon } from './Icons'
+import { CONTACT_INFO } from '../utils/constants'
 
 function Contact() {
-  const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=Unniyal,+Tirur,+Kerala+676302'
-
-  const orderViaWhatsApp = () => {
-    const message = "Hi MARCH Cafe! I'd like to place an order. Please share your menu."
-    const encodedMessage = encodeURIComponent(message)
-    window.open(`https://wa.me/919876543210?text=${encodedMessage}`, '_blank')
-  }
-
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Find <span className="text-[#FFB300]">Us</span>
+    <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-4 md:px-6 bg-[#FFFBEB]">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-3 sm:mb-4 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            Visit Us
           </h2>
-          <p className="text-gray-400 text-lg">Visit MARCH Cafe at Unniyal Beach, Tirur</p>
+          <p className="text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2 sm:px-4" style={{ fontFamily: 'system-ui, sans-serif' }}>
+            Experience oceanfront dining at The March Cafe
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div className="bg-[#0D0D0D] rounded-2xl p-8 border border-white/10 h-full">
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#FFB300]/20 p-3 rounded-xl">
-                    <MapPin className="w-6 h-6 text-[#FFB300]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Location</h3>
-                    <p className="text-gray-400">Unniyal, Tirur, Kerala 676302</p>
-                    <p className="text-gray-500 text-sm">Plus Code: WVFJ+QF Tirur, Kerala</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#FFB300]/20 p-3 rounded-xl">
-                    <Clock className="w-6 h-6 text-[#FFB300]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Opening Hours</h3>
-                    <p className="text-gray-400">Open Daily</p>
-                    <p className="text-[#FFB300] font-semibold">Closes 12:00 AM</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#FFB300]/20 p-3 rounded-xl">
-                    <Phone className="w-6 h-6 text-[#FFB300]" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Contact</h3>
-                    <p className="text-gray-400">+91 98765 43210</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <a
-                    href={`tel:+919876543210`}
-                    className="bg-[#FFB300] text-[#0D0D0D] px-6 py-3 rounded-xl font-bold hover:bg-[#FF8F00] transition-colors flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Call Us
-                  </a>
-                  <a
-                    href={googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-xl font-bold hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
-                  >
-                    <Navigation className="w-5 h-5" />
-                    Directions
-                  </a>
-                  <button
-                    onClick={orderViaWhatsApp}
-                    className="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    WhatsApp
-                  </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          {/* Left Block - Red */}
+          <div className="bg-[#DC2626] rounded-xl sm:rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 text-white shadow-xl">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+              Location
+            </h3>
+            <div className="space-y-3 sm:space-y-4 md:space-y-6" style={{ fontFamily: 'system-ui, sans-serif' }}>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <MapIcon />
+                <div>
+                  <p className="font-semibold text-sm sm:text-base md:text-lg mb-1">Address</p>
+                  <p className="text-white/90 text-xs sm:text-sm md:text-base">{CONTACT_INFO.address}</p>
                 </div>
               </div>
+              <a
+                href={CONTACT_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-[#DC2626] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full font-semibold hover:bg-[#FFFBEB] transition-colors text-sm sm:text-base md:text-lg shadow-lg"
+              >
+                <MapIcon />
+                Get Directions
+              </a>
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden border border-white/10 h-full min-h-[400px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.5!2d75.9!3d10.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU0JzAwLjAiTiA3NcKwNTQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: '400px' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="MARCH Cafe Location"
-            />
+          {/* Right Block - White with Red accent */}
+          <div className="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl border-2 border-[#DC2626]">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 text-[#DC2626]" style={{ fontFamily: 'Georgia, serif' }}>
+              Contact & Hours
+            </h3>
+            <div className="space-y-3 sm:space-y-4 md:space-y-6" style={{ fontFamily: 'system-ui, sans-serif' }}>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <ClockIcon />
+                <div>
+                  <p className="font-semibold text-sm sm:text-base md:text-lg mb-1 text-gray-800">Opening Hours</p>
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base">Open Daily • Closes 12 AM</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <PhoneIcon />
+                <div>
+                  <p className="font-semibold text-sm sm:text-base md:text-lg mb-1 text-gray-800">Phone</p>
+                  <p className="text-gray-600 text-xs sm:text-sm md:text-base">{CONTACT_INFO.phone}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,44 +1,41 @@
-import { Star } from 'lucide-react'
+import React from 'react'
+import { StarIcon } from './Icons'
+import { reviews } from '../data/reviews'
 
 function Reviews() {
-  const reviews = [
-    { id: 1, name: 'Rahul M.', rating: 5, text: 'Best burgers in town with a good ambience. The beach view makes it perfect!', tags: ['#BeachView', '#Burgers'] },
-    { id: 2, name: 'Priya S.', rating: 5, text: 'Goated food spot 🔥 Delicious food, top-notch quality, and worth every penny.', tags: ['#LoadedFries', '#Ambience'] },
-    { id: 3, name: 'Arjun K.', rating: 4, text: 'Great place with a beautiful beach view and peaceful atmosphere. Love the sunset!', tags: ['#BeachView', '#Peaceful'] },
-  ]
-
   return (
-    <section id="reviews" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0D0D]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            What Our <span className="text-[#FFB300]">Guests Say</span>
+    <section id="reviews" className="py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-4 md:px-6 bg-white">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-3 sm:mb-4 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+            Customer Reviews
           </h2>
-          <p className="text-gray-400 text-lg">Real reviews from our happy customers</p>
+          <div className="inline-flex items-center gap-2 bg-[#DC2626] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-4 sm:mb-6">
+            <span className="text-lg sm:text-xl md:text-2xl font-bold">4.5</span>
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-white"><StarIcon filled={true} /></span>
+              ))}
+            </div>
+          </div>
+          <p className="text-gray-700 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2 sm:px-4" style={{ fontFamily: 'system-ui, sans-serif' }}>
+            What our guests are saying about their beachfront dining experience
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-[#1A1A1A] rounded-2xl p-6 border border-white/10"
+              className="bg-[#FFFBEB] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 hover:border-[#DC2626]/30 transition-all shadow-md hover:shadow-lg"
             >
-              <div className="flex items-center gap-1 mb-4">
+              <div className="flex items-center gap-1 mb-3 sm:mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-[#FFB300] fill-[#FFB300]" />
+                  <span key={i} className="text-[#DC2626]"><StarIcon filled={true} /></span>
                 ))}
               </div>
-              <p className="text-gray-300 mb-4">"{review.text}"</p>
-              <div className="flex items-center justify-between">
-                <p className="font-semibold">{review.name}</p>
-                <div className="flex gap-2">
-                  {review.tags.map((tag, i) => (
-                    <span key={i} className="text-xs bg-[#FFB300]/20 text-[#FFB300] px-2 py-1 rounded-full">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <p className="text-gray-700 mb-3 sm:mb-4 italic text-sm sm:text-base md:text-base" style={{ fontFamily: 'system-ui, sans-serif' }}>{review.text}</p>
+              <p className="font-semibold text-[#DC2626] text-sm sm:text-base md:text-base" style={{ fontFamily: 'Georgia, serif' }}>{review.name}</p>
             </div>
           ))}
         </div>
