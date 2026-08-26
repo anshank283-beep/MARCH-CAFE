@@ -41,7 +41,7 @@ function Menu({ activeCategory, setActiveCategory, addToCart }) {
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className={`bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg card-hover border-2 ${
+              className={`bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg card-hover border-2 checkered-border ${
                 item.featured ? 'border-[#DC2626]' : 'border-gray-100'
               }`}
             >
@@ -52,7 +52,7 @@ function Menu({ activeCategory, setActiveCategory, addToCart }) {
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
                 {item.badge && (
-                  <div className="absolute top-3 left-3 bg-[#DC2626] text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wide shadow-lg">
+                  <div className="absolute top-3 left-3 starburst-badge text-[10px] sm:text-xs">
                     {item.badge}
                   </div>
                 )}

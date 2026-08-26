@@ -23,6 +23,105 @@
   animation-play-state: paused;
 }
 
+/* Retro Diner Checkered Pattern */
+.checkered-border {
+  position: relative;
+}
+
+.checkered-border::before,
+.checkered-border::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: repeating-conic-gradient(
+    #DC2626 0deg 90deg,
+    #FFFBEB 90deg 180deg
+  );
+  background-size: 24px 24px;
+}
+
+.checkered-border::before {
+  top: 0;
+}
+
+.checkered-border::after {
+  bottom: 0;
+}
+
+/* Starburst Badge */
+.starburst-badge {
+  position: relative;
+  background: #F59E0B;
+  color: #0D3B2E;
+  padding: 8px 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  clip-path: polygon(
+    0% 0%, 
+    15% 0%, 
+    20% 10%, 
+    35% 10%, 
+    40% 0%, 
+    50% 0%, 
+    60% 0%, 
+    65% 10%, 
+    80% 10%, 
+    85% 0%, 
+    100% 0%, 
+    100% 15%, 
+    90% 20%, 
+    90% 35%, 
+    100% 40%, 
+    100% 50%, 
+    100% 60%, 
+    90% 65%, 
+    90% 80%, 
+    100% 85%, 
+    100% 100%, 
+    85% 100%, 
+    80% 90%, 
+    65% 90%, 
+    60% 100%, 
+    50% 100%, 
+    40% 100%, 
+    35% 90%, 
+    20% 90%, 
+    15% 100%, 
+    0% 100%, 
+    0% 85%, 
+    10% 80%, 
+    10% 65%, 
+    0% 60%, 
+    0% 50%, 
+    0% 40%, 
+    10% 35%, 
+    10% 20%, 
+    0% 15%
+  );
+  animation: starburst-pulse 2s ease-in-out infinite;
+}
+
+@keyframes starburst-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Retro Pop-Art Typography */
+.retro-text {
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 3px 3px 0px #F59E0B, 6px 6px 0px rgba(0,0,0,0.1);
+}
+
 /* Glassmorphism Effects */
 .glass {
   background: rgba(255, 255, 255, 0.15);
