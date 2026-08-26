@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Beachfront from './components/Beachfront'
 import Menu from './components/Menu'
 import Reviews from './components/Reviews'
 import Contact from './components/Contact'
@@ -24,7 +25,7 @@ function App() {
   } = useCart()
 
   return (
-    <div className="min-h-screen bg-[#FFFBEB]" style={{ fontFamily: 'Georgia, serif' }}>
+    <div className="min-h-screen" style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#F7F4EB' }}>
       <Navbar 
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
@@ -34,7 +35,7 @@ function App() {
       
       <Hero />
       
-      {/* Yellow Marquee Banner */}
+      {/* Yellow Marquee Banner - UNCHANGED */}
       <div className="bg-[#F59E0B] py-3 sm:py-4 overflow-hidden">
         <div className="marquee-container">
           <div className="marquee-content">
@@ -72,6 +73,8 @@ function App() {
           </div>
         </div>
       </div>
+
+      <Beachfront />
 
       <Menu 
         activeCategory={activeCategory}

@@ -40,7 +40,7 @@ const CartDrawer = ({ cartOpen, setCartOpen, cart, removeFromCart, updateQuantit
         <div className="fixed inset-0" style={{ zIndex: Z_INDEX.cartDrawer }}>
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             style={{ zIndex: Z_INDEX.backdrop }}
             onClick={() => setCartOpen(false)}
           ></div>

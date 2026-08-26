@@ -7,7 +7,7 @@ function Menu({ activeCategory, setActiveCategory, addToCart }) {
     : menuItems.filter(item => item.category === activeCategory)
 
   return (
-    <section id="menu" className="py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-4 md:px-6 bg-[#FFFBEB]">
+    <section id="menu" className="py-12 sm:py-16 md:py-20 lg:py-24 px-3 sm:px-4 md:px-6" style={{ backgroundColor: '#F7F4EB' }}>
       <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-3 sm:mb-4 md:mb-6" style={{ fontFamily: 'Georgia, serif' }}>
