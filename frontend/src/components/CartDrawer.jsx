@@ -44,7 +44,10 @@ const CartDrawer = ({ cartOpen, setCartOpen, cart, removeFromCart, updateQuantit
           ></div>
           
           {/* Drawer */}
-          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-96 bg-white shadow-2xl overflow-hidden flex flex-col">
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-full sm:w-96 bg-white shadow-2xl overflow-hidden flex flex-col"
+            style={{ zIndex: Z_INDEX.backdrop + 1 }}
+          >
             {/* Drawer Header */}
             <div className="bg-[#DC2626] text-white p-4 sm:p-6 flex items-center justify-between">
               <h3 className="text-xl sm:text-2xl font-bold" style={{ fontFamily: 'Georgia, serif' }}>Your Order</h3>
