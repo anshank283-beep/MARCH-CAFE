@@ -35,42 +35,28 @@ function App() {
       
       <Hero />
       
-      {/* Yellow Marquee Banner - UNCHANGED */}
-      <div className="bg-[#F59E0B] py-3 sm:py-4 overflow-hidden">
+      {/* Yellow Marquee Banner */}
+      <div className="relative py-3 sm:py-4 overflow-hidden" style={{ backgroundColor: '#F2B705' }}>
         <div className="marquee-container">
           <div className="marquee-content">
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>SIGNATURE COFFEE</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>SEASIDE MOCKTAILS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>FRESH BAKES</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>BEACH SNACKS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>OCEANFRONT DINING</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>SUNSET VIEWS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>ARTISANAL FLAVORS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>PEACEFUL BEACHFRONT MORNINGS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>SIGNATURE COFFEE</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>SEASIDE MOCKTAILS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>FRESH BAKES</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>BEACH SNACKS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>OCEANFRONT DINING</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>SUNSET VIEWS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>ARTISANAL FLAVORS</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>•</span>
-            <span className="text-[#0D3B2E] font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Georgia, serif' }}>PEACEFUL BEACHFRONT MORNINGS</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>LOADED FRIES</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>•</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>SHAKES WORTH THE DRIVE</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>•</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>PEACEFUL BEACHFRONT MORNINGS</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>•</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>LOADED FRIES</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>•</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>SHAKES WORTH THE DRIVE</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>•</span>
+            <span className="font-bold text-sm sm:text-base mx-4" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#112A23' }}>PEACEFUL BEACHFRONT MORNINGS</span>
           </div>
+        </div>
+        {/* Wavy cream border transition at bottom */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 60" fill="#F7F4EB" className="w-full h-12 sm:h-16">
+            <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" />
+          </svg>
         </div>
       </div>
 

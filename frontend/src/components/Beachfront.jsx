@@ -1,113 +1,65 @@
 import React from 'react'
 import { StarIcon } from './Icons'
-import { reviews } from '../data/reviews'
 
 const Beachfront = () => {
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8" style={{ backgroundColor: '#F7F4EB' }}>
+    <section id="beachfront" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8" style={{ backgroundColor: '#85BBA8' }}>
       <div className="w-full max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" style={{ 
-            fontFamily: 'Georgia, Playfair Display, serif',
-            color: '#16332A'
-          }}>
-            A little room to breathe
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto" style={{ 
-            fontFamily: 'Inter, system-ui, sans-serif',
-            color: '#16332A',
-            opacity: 0.8
-          }}>
-            Escape the ordinary and find your peace by the sea
-          </p>
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {/* Text Card 1 */}
-          <div className="review-card">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4" style={{ 
-              fontFamily: 'Georgia, serif',
-              color: '#16332A'
-            }}>
-              Ocean Breeze
-            </h3>
-            <p className="text-sm sm:text-base leading-relaxed" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              color: '#16332A',
-              opacity: 0.7
-            }}>
-              Feel the gentle coastal winds as you savor our artisanal creations. The perfect setting for relaxation and connection.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+          {/* Left - Framed Graphic Illustration */}
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              {/* Frame */}
+              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 border-8 border-white rounded-lg sm:rounded-xl shadow-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                {/* Simple illustration of sun and mountains over water */}
+                <div className="text-center">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-4" style={{ backgroundColor: '#F2B705' }}></div>
+                  <div className="flex justify-center gap-2 mb-4">
+                    <div className="w-8 h-16 sm:w-10 sm:h-20" style={{ backgroundColor: '#112A23', clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
+                    <div className="w-12 h-20 sm:w-14 sm:h-24" style={{ backgroundColor: '#16332A', clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
+                    <div className="w-8 h-16 sm:w-10 sm:h-20" style={{ backgroundColor: '#112A23', clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></div>
+                  </div>
+                  <div className="w-full h-8 sm:h-10" style={{ backgroundColor: '#4A8B7F' }}></div>
+                  <div className="mt-4">
+                    <span className="text-2xl sm:text-3xl font-bold text-white" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>March</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Text Card 2 */}
-          <div className="review-card">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4" style={{ 
-              fontFamily: 'Georgia, serif',
-              color: '#16332A'
+          {/* Right - Content */}
+          <div className="text-white space-y-6 sm:space-y-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight" style={{ 
+              fontFamily: 'Playfair Display, Georgia, serif'
             }}>
-              Golden Sunsets
-            </h3>
-            <p className="text-sm sm:text-base leading-relaxed" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              color: '#16332A',
-              opacity: 0.7
+              A little room to breathe.
+            </h2>
+            
+            <p className="text-base sm:text-lg md:text-xl italic leading-relaxed max-w-xl" style={{ 
+              fontFamily: 'Playfair Display, Georgia, serif',
+              opacity: 0.9
             }}>
-              Watch the sun paint the sky in brilliant hues while enjoying our signature dishes. Every evening is a masterpiece.
+              "The perfect escape from the everyday chaos. Peaceful mornings, stunning sunsets, and food that feeds the soul."
             </p>
-          </div>
 
-          {/* Text Card 3 */}
-          <div className="review-card">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4" style={{ 
-              fontFamily: 'Georgia, serif',
-              color: '#16332A'
-            }}>
-              Fresh Flavors
-            </h3>
-            <p className="text-sm sm:text-base leading-relaxed" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              color: '#16332A',
-              opacity: 0.7
-            }}>
-              Our chefs craft each dish with locally sourced ingredients, bringing the authentic taste of Kerala to your table.
-            </p>
-          </div>
-        </div>
-
-        {/* Review Quote Section */}
-        <div className="mt-12 sm:mt-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10" style={{ 
-            fontFamily: 'Georgia, serif',
-            color: '#16332A'
-          }}>
-            What our guests say
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reviews.slice(0, 3).map((review, index) => (
-              <div key={index} className="review-card">
-                <div className="flex gap-1 mb-3">
+            {/* Stat Tags */}
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <div className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 backdrop-blur-sm rounded-full">
+                <span className="text-sm sm:text-base font-semibold" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Beachfront</span>
+              </div>
+              <div className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 backdrop-blur-sm rounded-full">
+                <span className="text-sm sm:text-base font-semibold" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Fresh</span>
+              </div>
+              <div className="px-4 sm:px-6 py-2 sm:py-3 bg-white/20 backdrop-blur-sm rounded-full flex items-center gap-2">
+                <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#E06353]"><StarIcon filled={true} /></span>
+                    <span key={i} style={{ color: '#F2B705' }}><StarIcon filled={true} /></span>
                   ))}
                 </div>
-                <p className="text-sm sm:text-base italic mb-4 leading-relaxed" style={{ 
-                  fontFamily: 'Inter, system-ui, sans-serif',
-                  color: '#16332A',
-                  opacity: 0.8
-                }}>
-                  "{review.text}"
-                </p>
-                <p className="text-sm font-semibold" style={{ 
-                  fontFamily: 'Georgia, serif',
-                  color: '#4A8B7F'
-                }}>
-                  — {review.author}
-                </p>
+                <span className="text-sm sm:text-base font-semibold" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>4.5 / 5</span>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

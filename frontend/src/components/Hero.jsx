@@ -1,109 +1,78 @@
 import React from 'react'
-import { MapIcon, StarIcon, PhoneIcon } from './Icons'
+import { StarIcon, PhoneIcon } from './Icons'
 import { CONTACT_INFO } from '../utils/constants'
 
 const Hero = () => {
   return (
     <section className="relative min-h-[90vh] sm:min-h-screen flex items-center overflow-hidden" style={{ 
+      backgroundColor: '#112A23',
       backgroundImage: 'url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
     }}>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#16332A]/95 via-[#16332A]/80 to-[#16332A]/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#112A23]/95 via-[#112A23]/80 to-[#112A23]/60"></div>
       
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Side - Typography */}
           <div className="text-white space-y-6 sm:space-y-8">
             {/* Location Tag */}
-            <div className="inline-flex items-center gap-2 bg-[#E06353]/20 backdrop-blur-sm border border-[#E06353]/30 px-4 py-2 rounded-full fade-in-up">
-              <span className="w-2 h-2 bg-[#E06353] rounded-full animate-pulse"></span>
-              <span className="text-sm sm:text-base font-medium tracking-wide" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <div className="inline-flex items-center gap-2 fade-in-up">
+              <div className="w-8 h-1 bg-[#F2B705]"></div>
+              <span className="text-sm sm:text-base font-medium tracking-wide" style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#F2B705' }}>
                 UNNIYAL, TIRUR • KERALA
               </span>
             </div>
             
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight fade-in-up" style={{ 
-              fontFamily: 'Georgia, Playfair Display, serif',
+              fontFamily: 'Playfair Display, Georgia, serif',
               animationDelay: '0.1s'
             }}>
               Good food.<br />
-              <span className="text-[#E06353]">Better view.</span>
+              <span style={{ color: '#E06353' }}>Better view.</span>
             </h1>
-            
-            {/* Subtext */}
-            <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-xl leading-relaxed fade-in-up" style={{ 
-              fontFamily: 'Inter, system-ui, sans-serif',
-              animationDelay: '0.2s'
-            }}>
-              Experience the perfect blend of artisanal flavors and ocean breeze at Kerala's most beloved beachfront cafe.
-            </p>
             
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 fade-in-up" style={{ animationDelay: '0.3s' }}>
               <button 
                 onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#E06353] text-white rounded-xl font-semibold hover:bg-[#C75343] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#E06353] text-white rounded-full font-semibold hover:bg-[#D95B43] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
-                See what's cooking
+                See what's cooking ↗
               </button>
               <a
-                href={CONTACT_INFO.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
-                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-              >
-                <MapIcon />
-                Get directions
-              </a>
-              <a
                 href={CONTACT_INFO.phoneUrl}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 <PhoneIcon />
-                Call the cafe
+                Call the cafe ↗
               </a>
-            </div>
-            
-            {/* Review Badge */}
-            <div className="inline-flex items-center gap-3 bg-[#4A8B7F] text-white px-5 py-3 rounded-xl shadow-lg fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-[#F59E0B]"><StarIcon filled={true} /></span>
-                ))}
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg">4.5</span>
-                <span className="text-xs text-white/90 uppercase tracking-wide">Star Reviews</span>
-              </div>
             </div>
           </div>
           
-          {/* Right Side - Decorative Image Frame */}
+          {/* Right Side - Decorative Artwork */}
           <div className="hidden lg:flex items-center justify-center fade-in-up" style={{ animationDelay: '0.5s' }}>
             <div className="relative">
-              {/* Circular Frame Accent */}
-              <div className="absolute -inset-4 bg-[#E06353]/20 rounded-full blur-3xl"></div>
-              <div className="absolute -inset-8 bg-[#4A8B7F]/10 rounded-full blur-3xl"></div>
+              {/* Large Yellow Circle */}
+              <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full" style={{ backgroundColor: '#F2B705' }}></div>
               
-              {/* Main Image */}
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80"
-                  alt="March Cafe"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#16332A]/50 to-transparent"></div>
-              </div>
-              
-              {/* Floating Badge */}
-              <div className="absolute -bottom-4 -right-4 bg-[#F7F4EB] text-[#16332A] px-6 py-3 rounded-xl shadow-xl">
-                <span className="font-bold text-sm" style={{ fontFamily: 'Georgia, serif' }}>Since 2024</span>
+              {/* Floating Review Pill Card */}
+              <div className="absolute -bottom-4 -right-4 bg-white text-[#112A23] px-6 py-4 rounded-xl shadow-2xl fade-in-up" style={{ animationDelay: '0.6s' }}>
+                <div className="flex items-center gap-3">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} style={{ color: '#F2B705' }}><StarIcon filled={true} /></span>
+                    ))}
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-lg" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>4.5</span>
+                    <span className="text-xs font-semibold uppercase tracking-wide" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Star Reviews</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

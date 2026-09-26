@@ -2,10 +2,11 @@
 
 /* Modern Beach Cafe Color Palette */
 :root {
-  --forest-green: #16332A;
+  --forest-green: #112A23;
   --coral-orange: #E06353;
   --cream-white: #F7F4EB;
-  --accent-teal: #4A8B7F;
+  --sage-green: #85BBA8;
+  --accent-yellow: #F2B705;
   --dark-text: #1A1A1A;
   --light-text: #FFFFFF;
 }
@@ -35,7 +36,7 @@
 
 /* Modern Typography */
 .modern-serif {
-  font-family: 'Georgia', 'Playfair Display', serif;
+  font-family: 'Playfair Display', 'Georgia', serif;
 }
 
 .modern-sans {
@@ -44,7 +45,7 @@
 
 /* Modern Gradient Text */
 .modern-gradient-text {
-  background: linear-gradient(135deg, var(--coral-orange) 0%, #C75343 100%);
+  background: linear-gradient(135deg, var(--coral-orange) 0%, #D95B43 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -75,7 +76,7 @@
 
 /* Modern Badge */
 .modern-badge {
-  background: var(--accent-teal);
+  background: var(--sage-green);
   color: var(--light-text);
   padding: 6px 14px;
   border-radius: 20px;
@@ -279,7 +280,7 @@ html {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+  background: linear-gradient(135deg, var(--coral-orange) 0%, #D95B43 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

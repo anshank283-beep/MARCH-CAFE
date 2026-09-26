@@ -38,21 +38,21 @@ const CartDrawer = ({ cartOpen, setCartOpen, cart, removeFromCart, updateQuantit
     <>
       {cartOpen && (
         <div className="fixed inset-0" style={{ zIndex: Z_INDEX.cartDrawer }}>
-          {/* Backdrop */}
+          {/* Backdrop - ONLY backdrop has blur */}
           <div 
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             style={{ zIndex: Z_INDEX.backdrop }}
             onClick={() => setCartOpen(false)}
           ></div>
           
-          {/* Drawer */}
+          {/* Drawer - High contrast white background, NO blur */}
           <div 
-            className="absolute right-0 top-0 bottom-0 w-full sm:w-96 md:w-[400px] lg:w-[450px] max-w-[90vw] bg-white shadow-2xl flex flex-col"
+            className="absolute right-0 top-0 bottom-0 w-full sm:w-96 md:w-[400px] lg:w-[450px] max-w-[90vw] bg-white shadow-2xl flex flex-col text-black"
             style={{ zIndex: Z_INDEX.backdrop + 1 }}
           >
             {/* Drawer Header */}
-            <div className="bg-[#DC2626] text-white p-4 sm:p-5 md:p-6 flex items-center justify-between flex-shrink-0">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold" style={{ fontFamily: 'Georgia, serif' }}>Your Order</h3>
+            <div className="text-white p-4 sm:p-5 md:p-6 flex items-center justify-between flex-shrink-0" style={{ backgroundColor: '#E06353' }}>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>Your Order</h3>
               <button 
                 onClick={() => setCartOpen(false)}
                 className="text-white hover:text-white/80 p-2"
@@ -66,16 +66,16 @@ const CartDrawer = ({ cartOpen, setCartOpen, cart, removeFromCart, updateQuantit
             <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6 min-h-0">
               {cart.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-gray-500 text-sm sm:text-base md:text-lg" style={{ fontFamily: 'system-ui, sans-serif' }}>Your cart is empty</p>
+                  <p className="text-gray-500 text-sm sm:text-base md:text-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Your cart is empty</p>
                 </div>
               ) : (
                 <div className="space-y-3 sm:space-y-4">
                   {cart.map((item) => (
-                    <div key={item.id} className="bg-[#FFFBEB] rounded-xl p-3 sm:p-4 border border-gray-200">
+                    <div key={item.id} className="rounded-xl p-3 sm:p-4 border border-gray-200" style={{ backgroundColor: '#F7F4EB' }}>
                       <div className="flex justify-between items-start mb-2 sm:mb-3">
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-[#DC2626] text-sm sm:text-base" style={{ fontFamily: 'Georgia, serif' }}>{item.name}</h4>
-                          <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: 'system-ui, sans-serif' }}>₹{item.price}</p>
+                          <h4 className="font-semibold text-sm sm:text-base" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#E06353' }}>{item.name}</h4>
+                          <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>₹{item.price}</p>
                         </div>
                         <button 
                           onClick={() => removeFromCart(item.id)}
@@ -89,21 +89,23 @@ const CartDrawer = ({ cartOpen, setCartOpen, cart, removeFromCart, updateQuantit
                         <div className="flex items-center gap-2">
                           <button 
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-colors text-sm sm:text-base"
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full text-white font-bold transition-colors text-sm sm:text-base"
+                            style={{ backgroundColor: '#E06353' }}
                             aria-label="Decrease quantity"
                           >
                             -
                           </button>
-                          <span className="font-semibold text-sm sm:text-base md:text-lg w-6 sm:w-8 text-center" style={{ fontFamily: 'system-ui, sans-serif' }}>{item.quantity}</span>
+                          <span className="font-semibold text-sm sm:text-base md:text-lg w-6 sm:w-8 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>{item.quantity}</span>
                           <button 
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-colors text-sm sm:text-base"
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full text-white font-bold transition-colors text-sm sm:text-base"
+                            style={{ backgroundColor: '#E06353' }}
                             aria-label="Increase quantity"
                           >
                             +
                           </button>
                         </div>
-                        <span className="font-bold text-[#DC2626] text-sm sm:text-base md:text-lg" style={{ fontFamily: 'system-ui, sans-serif' }}>₹{item.price * item.quantity}</span>
+                        <span className="font-bold text-sm sm:text-base md:text-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#E06353' }}>₹{item.price * item.quantity}</span>
                       </div>
                     </div>
                   ))}
@@ -115,13 +117,13 @@ const CartDrawer = ({ cartOpen, setCartOpen, cart, removeFromCart, updateQuantit
             {cart.length > 0 && (
               <div className="border-t border-gray-200 p-3 sm:p-4 md:p-6 bg-white flex-shrink-0">
                 <div className="flex justify-between items-center mb-3 sm:mb-4">
-                  <span className="text-gray-700 font-semibold text-sm sm:text-base md:text-lg" style={{ fontFamily: 'system-ui, sans-serif' }}>Total:</span>
-                  <span className="text-[#DC2626] font-bold text-lg sm:text-xl md:text-2xl" style={{ fontFamily: 'Georgia, serif' }}>₹{cartTotal}</span>
+                  <span className="text-gray-700 font-semibold text-sm sm:text-base md:text-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Total:</span>
+                  <span className="font-bold text-lg sm:text-xl md:text-2xl" style={{ fontFamily: 'Playfair Display, Georgia, serif', color: '#E06353' }}>₹{cartTotal}</span>
                 </div>
                 <button
                   onClick={sendWhatsAppOrder}
-                  className="w-full bg-[#25D366] text-white py-2.5 sm:py-3 md:py-4 rounded-xl font-bold hover:bg-[#128C7E] transition-colors flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg shadow-lg"
-                  style={{ fontFamily: 'system-ui, sans-serif' }}
+                  className="w-full text-white py-2.5 sm:py-3 md:py-4 rounded-xl font-bold transition-colors flex items-center justify-center gap-2 text-sm sm:text-base md:text-lg shadow-lg"
+                  style={{ backgroundColor: '#25D366', fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
                   <span>Send Order via WhatsApp 🚀</span>
                 </button>
