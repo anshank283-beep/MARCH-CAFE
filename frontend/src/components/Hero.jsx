@@ -32,12 +32,12 @@ const Hero = () => {
             </div>
             
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-tight fade-in-up" style={{ 
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-tight fade-in-up max-w-4xl" style={{ 
               fontFamily: 'Playfair Display, Georgia, serif',
               animationDelay: '0.1s'
             }}>
-              Good food.<br />
-              <span style={{ color: '#E06353' }}>Better view.</span>
+              <span className="whitespace-nowrap">Good food.</span><br />
+              <span className="whitespace-nowrap" style={{ color: '#E06353' }}>Better view.</span>
             </h1>
             
             {/* Description Subtext */}
@@ -85,10 +85,10 @@ const Hero = () => {
           <div className="hidden lg:flex items-center justify-end fade-in-up relative overflow-hidden" style={{ animationDelay: '0.5s' }}>
             <div className="relative w-full flex justify-end h-full">
               {/* Half-cropped Yellow Circle from extreme right edge */}
-              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 w-80 h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[32rem] 2xl:h-[32rem] rounded-full" style={{ backgroundColor: '#F2B705' }}></div>
+              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/4 w-80 h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[32rem] 2xl:h-[32rem] rounded-full" style={{ backgroundColor: '#F2B705' }}></div>
               
               {/* Floating 4.5 Star Review Badge */}
-              <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 bg-white text-[#112A23] px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-2xl fade-in-up z-10" style={{ animationDelay: '0.6s' }}>
+              <div className="absolute bottom-12 right-12 lg:bottom-16 lg:right-16 bg-white text-[#112A23] px-5 sm:px-6 py-3 sm:py-4 rounded-xl shadow-2xl fade-in-up z-10" style={{ animationDelay: '0.6s' }}>
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="flex gap-0.5 sm:gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -106,10 +106,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="#F7F4EB" className="w-full h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32">
-          <path d="M0,64 C480,150 960,0 1440,64 L1440,120 L0,120 Z" />
+      {/* Wave Divider for smooth transition to yellow banner */}
+      <div className="absolute bottom-0 left-0 right-0" style={{ zIndex: 1 }}>
+        <svg viewBox="0 0 1440 60" fill="#F2B705" className="w-full h-8 sm:h-10 md:h-12">
+          <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" />
         </svg>
       </div>
     </section>
