@@ -60,13 +60,13 @@ function App() {
         </div>
       </div>
 
-      <Beachfront />
-
       <Menu 
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
         addToCart={addToCart}
       />
+
+      <Beachfront />
       
       <Reviews />
       <Contact />

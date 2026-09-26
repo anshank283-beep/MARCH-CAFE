@@ -16,7 +16,7 @@ function Contact() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-8">
           {/* Left Card - Coral Red */}
           <div className="rounded-xl sm:rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-xl" style={{ backgroundColor: '#E06353' }}>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8" style={{ fontFamily: 'Playfair Display, Georgia, serif' }}>

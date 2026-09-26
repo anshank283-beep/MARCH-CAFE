@@ -3,7 +3,7 @@ import { StarIcon } from './Icons'
 
 const Beachfront = () => {
   return (
-    <section id="beachfront" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8" style={{ backgroundColor: '#85BBA8' }}>
+    <section id="our-place" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8" style={{ backgroundColor: '#85BBA8' }}>
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left - Framed Graphic Illustration */}

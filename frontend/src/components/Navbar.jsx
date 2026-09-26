@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuIcon, CloseIcon, CartIcon } from './Icons'
+import { MenuIcon, CloseIcon, CartIcon, InstagramIcon } from './Icons'
 import { Z_INDEX, CONTACT_INFO } from '../utils/constants'
 
 const MarchLogo = () => (
@@ -21,22 +21,33 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, cartItemCount, setCartOpen 
         {/* Center - Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center gap-6 sm:gap-8">
           <a href="#menu" className="text-white/90 hover:text-white text-sm sm:text-base font-medium transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Menu</a>
-          <a href="#beachfront" className="text-white/90 hover:text-white text-sm sm:text-base font-medium transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Our place</a>
+          <a href="#our-place" className="text-white/90 hover:text-white text-sm sm:text-base font-medium transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Our place</a>
           <a href="#reviews" className="text-white/90 hover:text-white text-sm sm:text-base font-medium transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Reviews</a>
           <a href="#contact" className="text-white/90 hover:text-white text-sm sm:text-base font-medium transition-colors" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Visit</a>
         </div>
         
-        {/* Right - Get Directions Button + Cart */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        {/* Right - Get Directions Button + Social + Cart */}
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Get Directions Button (Desktop) */}
           <a
             href={CONTACT_INFO.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-2 border-2 border-white text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold hover:bg-white hover:text-[#112A23] transition-all text-sm sm:text-base"
+            className="hidden lg:flex items-center gap-2 border-2 border-white text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold hover:bg-white hover:text-[#112A23] transition-all text-sm sm:text-base"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             Get directions ↗
+          </a>
+          
+          {/* Instagram/Social Icon */}
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:block text-white p-2 hover:text-white/80 transition-colors"
+            aria-label="Instagram"
+          >
+            <InstagramIcon />
           </a>
           
           {/* Cart Icon with Badge */}
@@ -69,19 +80,30 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, cartItemCount, setCartOpen 
         <div className="md:hidden py-4 border-t border-white/10">
           <div className="flex flex-col gap-3">
             <a href="#menu" className="text-white/90 hover:text-white text-base py-2 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Menu</a>
-            <a href="#beachfront" className="text-white/90 hover:text-white text-base py-2 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Our place</a>
+            <a href="#our-place" className="text-white/90 hover:text-white text-base py-2 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Our place</a>
             <a href="#reviews" className="text-white/90 hover:text-white text-base py-2 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Reviews</a>
             <a href="#contact" className="text-white/90 hover:text-white text-base py-2 font-medium" style={{ fontFamily: 'Inter, system-ui, sans-serif' }} onClick={() => setMobileMenuOpen(false)}>Visit</a>
-            <a
-              href={CONTACT_INFO.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-white text-white px-4 py-2 rounded-full font-semibold hover:bg-white hover:text-[#112A23] transition-all text-sm"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Get directions ↗
-            </a>
+            <div className="flex items-center gap-4 pt-2">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white p-2 hover:text-white/80 transition-colors"
+                aria-label="Instagram"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href={CONTACT_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border-2 border-white text-white px-4 py-2 rounded-full font-semibold hover:bg-white hover:text-[#112A23] transition-all text-sm"
+                style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Get directions ↗
+              </a>
+            </div>
           </div>
         </div>
       )}

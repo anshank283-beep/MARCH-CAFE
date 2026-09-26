@@ -21,7 +21,7 @@ function Reviews() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-8">
           {/* Card 1 - Coral Highlighted */}
           <div className="rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl" style={{ backgroundColor: '#E06353' }}>
             <div className="flex gap-1 mb-4">
